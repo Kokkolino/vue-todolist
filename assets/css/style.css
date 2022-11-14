@@ -1,3 +1,7 @@
 body{
     background-color: gainsboro;
 }
+
+.fa-circle-xmark{
+    cursor: pointer;
+}
