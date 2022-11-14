@@ -11,16 +11,17 @@
 <body>
     <main id="root" class="d-flex m-0-auto justify-content-center align-items-center row">
         <!-- new task input -->
-        <header class="col-12 bg-light d-flex justify-content-center py-3 gx-3">
-                <div class="col-3 mx-3">
-                  <label for="taskInput" class="visually-hidden">New Task</label>
-                  <input v-model="newTask" type="text" class="form-control" id="taskInput" placeholder="New Task">
-                </div>
-                <div class="col-2">
-                  <button type="submit" class="btn btn-primary" @click="addTask(newTask)">Add Task</button>
-                </div>
-            </form>
-        </header>
+    
+        <form v-on:submit.prevent="onSubmit" class="col-12 bg-light d-flex justify-content-center py-3 gx-3">
+            <div class="col-3 mx-3">
+                <label for="taskInput" class="visually-hidden">New Task</label>
+                <input v-on:keyup.enter="submit" v-model="newTask" type="text" class="form-control" id="taskInput" placeholder="New Task">
+            </div>
+            <div class="col-2">
+                <button type="submit" class="btn btn-primary" @click="addTask(newTask)">Add Task</button>
+            </div>
+        </form>
+        
 
         <!-- to do tasks -->
             <!-- if the list is empty -->
