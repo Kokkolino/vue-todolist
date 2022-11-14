@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
@@ -14,10 +14,10 @@
         <header class="col-12 bg-light d-flex justify-content-center py-3 gx-3">
                 <div class="col-3 mx-3">
                   <label for="taskInput" class="visually-hidden">New Task</label>
-                  <input type="text" class="form-control" id="taskInput" placeholder="New Task">
+                  <input v-model="newTask" type="text" class="form-control" id="taskInput" placeholder="New Task">
                 </div>
                 <div class="col-2">
-                  <button type="submit" class="btn btn-primary">Add Task</button>
+                  <button type="submit" class="btn btn-primary" @click="addTask(newTask)">Add Task</button>
                 </div>
             </form>
         </header>
@@ -32,8 +32,13 @@
             <h3>
                 ToDo list
             </h3>
-            <ul v-for="(element) in todoElements">
-                <li>{{element.task}}</li>
+            <ul >
+                <li v-for="(element) in todoElements">
+                    <span>
+                        {{element.task}}
+                    </span>
+                    <i class="fa-solid fa-circle-xmark text-danger"></i>
+                </li>
             </ul>
         </section>
 

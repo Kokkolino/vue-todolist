@@ -8,5 +8,11 @@ var app = new Vue({
       completedTasks: [
         
       ],
+    },
+    methods:{
+      addTask: function (value){
+        const x = {task: value, done: false};
+        return this.todoElements.push(x);
+      }
     }
   })
