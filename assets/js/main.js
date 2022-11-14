@@ -1,6 +1,12 @@
 var app = new Vue({
-    el: '#app',
+    el: '#root',
     data: {
-      message: 'Hello Vue!'
+      todoElements: [
+
+      ],
+
+      completedTasks: [
+        
+      ],
     }
   })
