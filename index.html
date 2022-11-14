@@ -21,6 +21,7 @@
                 </div>
             </form>
         </header>
+
         <!-- to do tasks -->
             <!-- if the list is empty -->
         <div v-if="todoElements.length==0" class="gy-5 px-5 py-3 text-center">
@@ -31,11 +32,11 @@
             <h3>
                 ToDo list
             </h3>
-
-            <ul>
-
+            <ul v-for="(element) in todoElements">
+                <li>{{element.task}}</li>
             </ul>
         </section>
+
         <!-- completed tasks -->
             <!-- this section will be shown when the array isn't empty -->
         <section v-show="completedTasks.length!=0" class="col-10 bg-light rounded gy-5 px-5 py-3">
